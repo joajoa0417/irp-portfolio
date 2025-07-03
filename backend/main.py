@@ -15,6 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 from typing import Dict
+from fastapi.responses import JSONResponse
 
 from utils import calculate_A_from_survey, filter_best_principal_products_by_age_cumsum
 from optimizer import calculate_er_sigma, optimize_portfolio, get_alpha_by_A
@@ -91,7 +92,7 @@ def recommend(user: UserInput):
                 weight = row['연 금리(%)'] / total_rate if total_rate > 0 else 1 / len(selected_deposits)
                 results.append({"asset": f"예금_{row['상품명']}", "weight": round(weight, 4)})
 
-            return {
+            response_data = {
                 "calculated_A": A,
                 "investor_score": investor_score,
                 "target_risky_ratio": target_risky_ratio,
@@ -100,16 +101,23 @@ def recommend(user: UserInput):
                 "warnings": warnings
             }
 
+            response = JSONResponse(content=response_data)
+            response.headers["Access-Control-Allow-Origin"] = "https://irp-portfolio.vercel.app"
+            response.headers["Access-Control-Allow-Credentials"] = "true"
+            return response
+
         alpha = get_alpha_by_A(A)
-        ER, Sigma, asset_names, principal_asset_indices, non_principal_asset_indices = calculate_er_sigma(principal_df, non_principal_df, A, user)
-        portfolio_weights, _ = optimize_portfolio(ER, Sigma, A, principal_asset_indices, non_principal_asset_indices, target_risky_ratio, alpha)
+        ER, Sigma, asset_names, principal_asset_indices, non_principal_asset_indices = calculate_er_sigma(
+            principal_df, non_principal_df, A, user)
+        portfolio_weights, _ = optimize_portfolio(
+            ER, Sigma, A, principal_asset_indices, non_principal_asset_indices, target_risky_ratio, alpha)
 
         results = [
             {"asset": name, "weight": round(w, 4)}
             for name, w in zip(asset_names, portfolio_weights) if w > 0.001
         ]
 
-        return {
+        response_data = {
             "calculated_A": A,
             "investor_score": investor_score,
             "target_risky_ratio": target_risky_ratio,
@@ -117,6 +125,11 @@ def recommend(user: UserInput):
             "portfolio": results,
             "warnings": warnings
         }
+
+        response = JSONResponse(content=response_data)
+        response.headers["Access-Control-Allow-Origin"] = "https://irp-portfolio.vercel.app"
+        response.headers["Access-Control-Allow-Credentials"] = "true"
+        return response
 
     except Exception as e:
         import traceback
