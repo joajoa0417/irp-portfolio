@@ -47,6 +47,18 @@ class UserInput(BaseModel):
     age_group: str = Field(..., example="30대(35~39세)")
     answers: Dict[str, str] = Field(...)
 
+from fastapi import Request
+from fastapi.responses import JSONResponse
+
+@app.options("/recommend")
+async def options_recommend(request: Request):
+    """CORS Preflight 대응용 핸들러"""
+    response = JSONResponse(content={"message": "ok"})
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "*"
+    return response
+
 @app.post("/recommend")
 def recommend(user: UserInput):
     try:
