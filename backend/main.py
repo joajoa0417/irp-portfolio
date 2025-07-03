@@ -54,7 +54,7 @@ from fastapi.responses import JSONResponse
 async def options_recommend(request: Request):
     """CORS Preflight 대응용 핸들러"""
     response = JSONResponse(content={"message": "ok"})
-    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Origin"] = "https://irp-portfolio.vercel.app"
     response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
     response.headers["Access-Control-Allow-Headers"] = "*"
     return response
