@@ -24,14 +24,15 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
+origins = ["https://irp-portfolio.vercel.app"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,  # 🔥 * 말고 명시
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 DATA_DIR = 'data'
 principal_df = pd.read_csv(os.path.join(DATA_DIR, 'irp.csv'), encoding='utf-8')
 non_principal_df = pd.read_csv(os.path.join(DATA_DIR, 'update_irp_non_with_index.csv'))
@@ -52,11 +53,11 @@ from fastapi.responses import JSONResponse
 
 @app.options("/recommend")
 async def options_recommend(request: Request):
-    """CORS Preflight 대응용 핸들러"""
     response = JSONResponse(content={"message": "ok"})
     response.headers["Access-Control-Allow-Origin"] = "https://irp-portfolio.vercel.app"
     response.headers["Access-Control-Allow-Methods"] = "POST, OPTIONS"
     response.headers["Access-Control-Allow-Headers"] = "*"
+    response.headers["Access-Control-Allow-Credentials"] = "true"
     return response
 
 @app.post("/recommend")
