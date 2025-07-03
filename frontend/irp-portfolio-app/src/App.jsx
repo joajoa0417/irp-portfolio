@@ -253,7 +253,7 @@ const ProfessionalIRPSite = () => {
         JSON.stringify(requestBody, null, 2)
       );
 
-      const response = await fetch("https://bd0d-52-78-117-229.ngrok-free.app/recommend", {
+      const response = await fetch("https://90f7-52-78-117-229.ngrok-free.app", {
         // ⚠️ 127.0.0.1 -> localhost
         method: "POST",
         headers: { "Content-Type": "application/json" },
