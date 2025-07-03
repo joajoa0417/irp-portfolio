@@ -253,7 +253,7 @@ const ProfessionalIRPSite = () => {
         JSON.stringify(requestBody, null, 2)
       );
 
-      const response = await fetch("http://localhost:8000/recommend", {
+      const response = await fetch("http://3.38.123.45:8000/recommend", {
         // ⚠️ 127.0.0.1 -> localhost
         method: "POST",
         headers: { "Content-Type": "application/json" },
