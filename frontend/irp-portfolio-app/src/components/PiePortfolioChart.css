@@ -1,0 +1,104 @@
+.pie-portfolio-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 32px 28px 24px 28px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.pie-rec-list {
+  padding-right: 14px;
+}
+
+.pie-rec-list h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* ▶▶▶ 각 자산군별 박스 스타일 추가 */
+.pie-rec-item {
+  background: #f6f7fa;
+  border-radius: 13px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  padding: 18px 18px 12px 18px;
+  margin-bottom: 22px;
+  border-left: 6px solid #666b76; /* 기본 주식형 색상, 아래에서 덮어씀 */
+  transition: box-shadow 0.18s;
+  position: relative;
+}
+
+.pie-rec-item:nth-child(2) {
+  border-left: 6px solid #666b76;
+}
+.pie-rec-item:nth-child(3) {
+  border-left: 6px solid #001e5a;
+}
+
+.pie-rec-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.pie-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pie-rec-name {
+  margin-right: 7px;
+}
+
+.pie-rec-percent {
+  font-weight: 600;
+  margin-left: auto;
+  font-size: 15px;
+}
+
+.pie-products {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 14px;
+  color: #444;
+}
+
+.pie-chart-area {
+  min-width: 270px;
+}
+
+.pie-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.pie-tooltip {
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  font-size: 14px;
+}
+
+.pie-chart-area .recharts-responsive-container {
+  margin-top: 100px; /* 원하는 만큼 숫자 조절 */
+}
+
+.pie-tooltip {
+  background: #fff;
+  padding: 18px 26px; /* ← 여기! 패딩 수치를 더 크게 */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  font-size: 15px;
+  min-width: 180px; /* 옵션: 툴팁이 너무 좁으면 넓히기 */
+}

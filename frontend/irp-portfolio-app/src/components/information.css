@@ -1,0 +1,654 @@
+.ri-main {
+    max-width: 720px;
+    margin: 4rem auto 3rem auto;
+    background: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 6px 32px rgba(0,30,90,0.07);
+    padding: 0 0rem 5rem 0rem;
+    text-align: center;
+  }
+
+  .ri-intro-section {
+    width: 100vw;      /* ← 화면 전체 넓이 */
+    background: #fff;
+    padding: 3rem 0 2.2rem 0;  /* 좌우 여백 X, 상하만 */
+    margin: 0;         /* 좌우 여백 제거 */
+    border-radius: 0;  /* 라운드 제거 */
+    box-shadow: none;  /* 그림자 제거 */
+    text-align: center;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+}
+
+/* 내부 컨텐츠를 중앙에 정렬하고 싶을 때 */
+.ri-intro-inner {
+    max-width: 720px;  /* 기존 본문 폭과 맞춤 */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+  .ri-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #002470;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.03em;
+  }
+  .ri-subtitle {
+    color: #000000;
+    font-size: 1.08rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+
+  .ri-subtitle2 {
+    color: #404040;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+  
+  .ri-card-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.2rem;
+    margin-bottom: 2.2rem;
+    flex-wrap: wrap;
+  }
+  .ri-card {
+    flex: 1 1 120px;
+    min-width: 120px;
+    max-width: 170px;
+    border-radius: 1rem;
+    background: linear-gradient(135deg,#e2e8f0,#f3f0fd);
+    color: #1e293b;
+    padding: 1.3rem 1rem 1rem 1rem;
+    margin: 0 0.1rem;
+    box-shadow: 0 2px 6px rgba(0,30,90,0.04);
+    cursor: pointer;
+    border: 2px solid #fff;
+    transition: all 0.25s cubic-bezier(.55,.1,.47,.95);
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .ri-card:hover,
+  .ri-card.active {
+    border-color: #d70082;
+    background: linear-gradient(135deg,#fbe3ee,#e9eaff);
+    color: #000000;
+    box-shadow: 0 6px 20px rgba(215,0,130,0.10);
+    transform: translateY(-2px) scale(1.04);
+  }
+  .ri-card-label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.01em;
+  }
+  .ri-card-sub {
+    font-size: 0.97rem;
+    color: #4b5563;
+    font-weight: 400;
+  }
+  
+  .ri-detail-box {
+
+    background: linear-gradient(135deg,#f8fafc,#f3f0fd 90%);
+    border-radius: 1.5rem;
+    box-shadow: 0 3px 12px rgba(30,41,59,0.07);
+    text-align: left;
+    padding: 2.1rem 2rem 1.7rem 2rem;
+    color: #22223b;
+    min-height: 180px;
+    font-size: 1.13rem;
+    position: relative;
+  }
+  .ri-detail-box strong {
+    color: #d70082;
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .ri-detail-box ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.7rem;
+    padding-left: 1.1em;
+    font-size: 1.01rem;
+  }
+  .ri-detail-box li {
+    margin-bottom: 0.45em;
+    line-height: 1.6;
+  }
+  .ri-accent {
+    color: #8b5cf6;
+    font-weight: bold;
+  }
+  
+  .ri-chart-bar {
+    margin-top: 1.2em;
+    height: 28px;
+    position: relative;
+  }
+  .ri-bar-20s, .ri-bar-40s, .ri-bar-sum {
+    height: 28px;
+    display: inline-block;
+    border-radius: 12px;
+    text-align: left;
+    padding-left: 1.2em;
+    line-height: 28px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1rem;
+    margin-right: 8px;
+  }
+  .ri-bar-20s { background: linear-gradient(90deg,#d70082 60%,#8b5cf6); }
+  .ri-bar-40s { background: linear-gradient(90deg,#10b981 50%,#3b82f6); }
+  .ri-bar-sum { background: #cbd5e1; color: #344054; }
+  
+  .ri-chart-circle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1.3em;
+  }
+  .ri-circle-text {
+    width: 62px; height: 62px;
+    background: radial-gradient(circle,#10b981 68%,#bef264 100%);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(16,185,129,0.07);
+    border: 2px solid #e2e8f0;
+  }
+  
+  .ri-pie-legend {
+    margin-top: 1.3em;
+    display: flex;
+    gap: 2.5em;
+  }
+  .ri-pie-box {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+  }
+  .ri-pie-stable {
+    width: 32px; height: 32px; margin-right: 0.6em;
+    background: conic-gradient(#fbbf24 0 70%, #e5e7eb 0 100%);
+    border-radius: 50%;
+    border: 2px solid #f59e0b;
+  }
+  .ri-pie-risk {
+    width: 32px; height: 32px; margin-right: 0.6em;
+    background: conic-gradient(#d70082 0 30%, #e5e7eb 0 100%);
+    border-radius: 50%;
+    border: 2px solid #d70082;
+  }
+  
+  @media (max-width: 900px) {
+    .ri-main { padding: 1.5rem 0.7rem; }
+    .ri-card-list { gap: 0.5rem; }
+    .ri-detail-box { padding: 1.2rem 0.6rem 1.2rem 0.9rem; }
+  }
+
+  /* ------ 상단 네비/소개 ------ */
+.irp-header {
+    width: 100vw;
+    height: 300px;
+    min-width: 340px;
+    background: linear-gradient(90deg, #002063 60%);
+    color: #fff;
+    padding-bottom: 2.5rem;
+    margin-bottom: 0;
+  }
+  .irp-nav {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 0.8rem 2rem 0.4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .irp-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+  }
+  .irp-logo img {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    margin-right: 7px;
+    background: #fff;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(44,24,122,0.09);
+  }
+  .irp-logo-small {
+    display: block;
+    font-size: 0.69rem;
+    color: #ff8fe0;
+    font-weight: 500;
+    margin-top: 1px;
+    letter-spacing: 0.01em;
+  }
+  .irp-nav nav {
+    display: flex;
+    gap: 2.2em;
+  }
+  .irp-nav nav a {
+    color: #fff;
+    font-size: 1.04rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .13s;
+    opacity: 0.92;
+  }
+  .irp-nav nav a:hover {
+    color: #ff8fe0;
+  }
+  .irp-consult-btn {
+    background: linear-gradient(90deg,#d70082 70%,#8b5cf6 100%);
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1.2em;
+    padding: 0.54em 1.65em;
+    font-weight: bold;
+    box-shadow: 0 1px 9px rgba(180,10,95,0.08);
+    cursor: pointer;
+    margin-left: 1.7em;
+    letter-spacing: -0.01em;
+    transition: background 0.18s;
+  }
+  .irp-consult-btn:hover {
+    background: linear-gradient(90deg,#8b5cf6 20%,#d70082 100%);
+  }
+  
+  .irp-hero {
+    max-width: 900px;
+    margin: 2.3rem auto 0 auto;
+    text-align: left;
+    padding: 0 2rem;
+  }
+  .irp-hero-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .irp-hero-highlight {
+    color: #d70082;
+    font-weight: bold;
+  }
+  .irp-hero-desc {
+    text-align: center;
+    font-size: 1.11rem;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.5;
+    opacity: 0.98;
+  }
+  
+  /* 미디어쿼리(모바일) */
+  @media (max-width: 900px) {
+    .irp-nav, .irp-hero { padding-left: 1rem; padding-right: 1rem; }
+    .irp-hero { font-size: 1.1rem; }
+    .irp-header { padding-bottom: 1.2rem; }
+  }
+  @media (max-width: 900px) {
+    .irp-nav, .irp-hero { padding-left: 1rem; padding-right: 1rem; }
+    .ri-intro-section { font-size: 1.1rem; }
+    .irp-header { padding-bottom: 1.2rem; }
+  }
+
+  @media (max-width: 650px) {
+    .irp-nav { flex-direction: column; gap: 0.6em; padding: 1.1rem 0.5rem 0.4rem 0.5rem;}
+    .irp-hero { margin-top: 1.2rem; }
+    .irp-logo { font-size: 1rem; }
+  }
+
+  /* --- 전체 배경을 두 부분으로 구분 --- */
+body {
+    background-color: #f4f6fa;
+  }
+  
+  .ri-main {
+    max-width: 900px;
+    box-shadow: none;
+    background: none;
+  }
+  
+  /* 카드 뉴스 영역 배경 */
+  .ri-card-section {
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 6px 20px rgba(0,30,90,0.05);
+    margin-bottom: 1.5rem;
+  }
+  
+  /* 디테일 정보 영역 배경 */
+  .ri-detail-box {
+    background-color: #ffffff;
+    border-radius: 1.2rem;
+    box-shadow: 0 6px 20px rgba(0,30,90,0.05);
+    padding: 2rem 2rem 1.5rem 2rem;
+  }
+  
+  /* 카드 크기 직사각형으로 확대 */
+  .ri-card {
+    flex: 1 1 140px;
+    min-width: 140px;
+    max-width: 200px;
+    height: 270px;
+    border-radius: 1rem;
+    background: linear-gradient(135deg,#e2e8f0,#f3f0fd);
+    color: #1e293b;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 2px 8px rgba(0,30,90,0.05);
+    border: 2px solid #fff;
+    transition: all 0.25s cubic-bezier(.55,.1,.47,.95);
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .ri-card:hover,
+  .ri-card.active {
+    border-color: #d70082;
+    background: linear-gradient(135deg,#fbe3ee,#e9eaff);
+    color: #000000;
+    box-shadow: 0 6px 20px rgba(215,0,130,0.10);
+    transform: translateY(-4px) scale(1.03);
+  }
+  
+  /* 카드 라벨 크기 조정 */
+  .ri-card-label {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  
+  .ri-card-sub {
+    font-size: 1rem;
+    color: #4b5563;
+    font-weight: 400;
+  }
+  
+  /* 미디어쿼리로 모바일 대응 추가 조정 */
+  @media (max-width: 900px) {
+    .ri-main {
+      padding: 0;
+      margin: 2rem auto;
+    }
+    .ri-card-section, .ri-detail-box {
+      padding: 1.5rem 1rem;
+    }
+  }
+  
+  @media (max-width: 650px) {
+    .ri-card-list {
+      gap: 0.6rem;
+    }
+    .ri-card {
+      min-width: 130px;
+      height: auto;
+      padding: 1rem 0.8rem;
+    }
+  }
+
+  
+  .ri-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .ri-table th, .ri-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #e0e4eb;
+    text-align: center;
+  }
+  
+  .ri-table th {
+    background-color: #f3f6fb;
+    font-weight: bold;
+    color: #002470;
+  }
+  
+  .ri-table td {
+    color: #334155;
+  }
+  
+  @media (max-width: 900px) {
+    .ri-main {
+      padding: 1.5rem;
+    }
+    .ri-card {
+      height: 120px;
+    }
+    .ri-detail-box {
+      padding: 1.5rem;
+    }
+  }
+
+  /* 카드 상단 이미지 크기 조정 */
+.ri-card-img {
+    align-self: center;
+    width: 150px;    /* 원하는 너비로 조정 */
+    height: auto;   /* 비율 유지 */
+    margin-bottom: 0.5rem;
+    display: block;
+    object-fit: contain;}  /* 이미지 비율 깨짐 방지 */
+
+    
+.chart-section {
+  margin: 1.5rem 0;
+}
+.chart-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-top: 0.4rem;
+}
+
+  /* 서비스 소개 */
+.intro-wrap {
+    width: 100%;
+    max-width: 1060px;
+    margin: 2.5rem auto 2.8rem auto;
+    text-align: center;
+    background: "white";
+  }
+  
+  .intro-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 2.4rem;
+    letter-spacing: -0.01em;
+  }
+  .intro-highlight {
+        background: linear-gradient(90deg, #d70082 30%, #4c1db8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+                background-clip: text;      /* 일부 브라우저 대응 */
+                color: transparent;
+        font-weight: bold;
+        font-weight: 700;
+  }
+  
+  .intro-card-list {
+    display: flex;
+    justify-content: center;
+    gap: 2.0rem;
+    margin-bottom: 2.7rem;
+    /* flex-wrap: wrap; */
+  }
+  .intro-card {
+    border: 1.5px solid #d0d5dc;
+    border-radius: 1.1rem;
+    background: linear-gradient(135deg,#f8fafc,#f3f0fd 85%);
+    box-shadow: 0px 4px 20px rgba(0,30,90,0.1);
+    padding: 2.1rem 1.5rem 1.5rem 1.5rem;
+    min-width: 295px;
+    max-width: 330px;
+    flex: 1 1 295px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    transition: box-shadow 0.16s, border 0.16s;
+  }
+  .intro-card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 0.8rem;
+    color: #11b984;
+  }
+  .intro-card-icon.big {
+    font-size: 4.5rem;
+    color: #11b984;
+  }
+  .intro-card-txt {
+    font-size: 1.02rem;
+    color: #222;
+    font-weight: 500;
+    line-height: 1.52;
+  }
+  
+  .intro-bottom-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.6rem;
+  }
+  .intro-bottom-card {
+    display: flex;
+    align-items: flex-start;
+    border: 1.5px solid #d0d5dc;
+    border-radius: 2rem;
+    background: linear-gradient(135deg,#f8fafc,#f3f0fd 85%);
+    box-shadow: 0 4px 24px rgba(0,30,90,0.06);
+    border-radius: 1.1rem;
+    box-shadow: 0 2px 17px rgba(70,90,100,0.07);
+    padding: 2.1rem 2.5rem 1.7rem 2.1rem;
+    min-width: 790px;
+    max-width: 900px;
+    flex: 1 1 790px;
+    display: flex;
+    margin: 0 auto;
+    gap: 2.1rem;
+  }
+  .intro-bottom-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 210px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    justify-content: center;
+    padding-top: 0.2rem;
+  }
+  .intro-bottom-remark {
+    font-size: 1.03rem;
+    color: #4a596a;
+    margin-top: 0.1rem;
+    display: block;
+  }
+  .intro-bottom-table-wrap {
+    flex: 1 1 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro-bottom-table {
+    width: 100%;
+    min-width: 350px;
+    max-width: 450px;
+    border-collapse: collapse;
+    font-size: 0.80rem;
+    margin-bottom: 1.3rem;
+    background: #f9fafb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 7px rgba(30,41,59,0.03);
+  }
+  .intro-bottom-table th,
+  .intro-bottom-table td {
+    padding: 0.75rem 1.2rem;
+    border-bottom: 1px solid #e6eaf1;
+    text-align: center;
+    font-weight: 500;
+  }
+  .intro-bottom-table th {
+    background: #f3f6fb;
+    color: #002470;
+  }
+  .intro-bottom-table td {
+    color: #44435d;
+  }
+  .intro-bottom-table tr:last-child td {
+    border-bottom: none;
+  }
+  .intro-bottom-caption {
+    font-size: 0.99rem;
+    color: #8c86a7;
+    margin-top: 0.2rem;
+  }
+  
+  @media (max-width: 1100px) {
+    .intro-wrap { max-width: 98vw; }
+    .intro-card-list { gap: 1rem; }
+    .intro-card { min-width: 180px; padding: 1.2rem 0.6rem 1rem 0.6rem;}
+    .intro-bottom-card { padding: 1.2rem 1rem; gap: 1rem;}
+  }
+  @media (max-width: 700px) {
+    .intro-card-list, .intro-bottom-card {
+      flex-direction: column;
+      align-items: stretch;
+      min-width: 0;
+    }
+    .intro-card { min-width: 0; max-width: 100vw; width: 100%; }
+    .intro-bottom-card { min-width: 0; max-width: 100vw; }
+    .intro-bottom-table { min-width: 0; width: 100%; }
+  }
+
+.white-bg-section {
+    width: 100vw;
+    background: #fff;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 4rem 0 5rem 0; /* 필요에 따라 조절 */
+}
+
+.gray-bg-section {
+    width: 100vw;
+    background: #e6eaf1;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0 0 2rem 0; /* 필요에 따라 조절 */
+}
